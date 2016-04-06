@@ -88,7 +88,7 @@ func playGame(teamOne: Team, teamTwo: Team) {
 }
 
 
-for (var i = 0; i < 50; i++) {
+for (var i = 0; i < 5; i++) {
     playGame(theAllStars, teamTwo: theBruins)
     playGame(theAllStars, teamTwo: theBlueJackets)
     playGame(theAllStars, teamTwo: theRedWings)
@@ -98,11 +98,8 @@ for (var i = 0; i < 50; i++) {
     
 }
 
-//theAllStars.printWinsAndLosses()
-//theBruins.printWinsAndLosses()
 
 var redWingsBestPlayer = theRedWings.giveMeYourBestPlayer()
-//print("this is the red wings best player \(redWingsBestPlayer.name)")
 
 theRedWings.sayTheNameOfYourBestPlayer()
 
@@ -113,17 +110,24 @@ theRedWings.sayTheNameOfYourBestPlayer()
 
 var theNHL = HockeyLeague(newLeagueName: "NHL", newTeams: [theBruins,theRedWings,theAllStars,theBlueJackets])
 var team = theNHL.giveMeTheTeamThatHasTheBestPlayer()
-print ("The NHL's team with the best player is : \(team.name)")
 
 var bestTeamInLeague = theNHL.giveMeTeamWithHightestRating()
-print("NHL's highest rated team is \(bestTeamInLeague.name)")
 
 var worstTeamInLeague = theNHL.teamWithWorstRecord()
-print("   W L R")
-print("-------------")
-print("this  is the team with the worst record, the \(worstTeamInLeague.name)")
+
+worstTeamInLeague.wins
+worstTeamInLeague.losses
+worstTeamInLeague.roster
 
 
-theNHL.printStandings()
+print("TEAM | W   L    R")
+print("--------------------")
+print(theBruins.name, theBruins.wins, theBruins.losses)
+print(theRedWings.name)
+print(theAllStars.name)
+print(theBlueJackets.name)
+print("___________________")
+
+
 
 

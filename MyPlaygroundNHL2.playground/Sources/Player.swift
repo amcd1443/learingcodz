@@ -25,25 +25,12 @@ public class Player {
         self.position = newPlayerPosition
         self.rating = newPlayerRating
     }
-    
-   public func tellMeAboutYourself() {
-        let hand = self.whichHandAmI()
-        print("\(self.name)'s number is \(self.number) and his postion is \(self.position) and shoots \(hand)")
-    }
-    
+
     func whichHandAmI() -> String {
         if isRightHanded {
             return "right"
         } else {
             return "left"
         }
-    }
-    
-    func tellMeAreYouRightHanded() {
-        if (self.isRightHanded == true) {
-            print("yes")
-        } else {
-            print("no")
-        }
-    }
+    }    
 }

@@ -15,8 +15,8 @@ public class Team {
     public var roster: [Player]
     var location: String
     var conference: Conference
-    var wins: Int
-    var losses: Int
+    public var wins: Int
+    public var losses: Int
     
     public init(newTeamName: String, newTeamLocation: String, newTeamConference: Conference) {
         self.name = newTeamName
@@ -31,21 +31,13 @@ public class Team {
         roster.append(newPlayer)
     }
 
-    public func printRoster() {
-        for player in roster {
-            print("\(player.name) is on the \(self.name)")
-        }
-    }
+
     public func wonGame() {
         wins = wins + 1
     }
     
     public func lostGame() {
         self.losses = self.losses+1
-    }
-    
-    public func printWinsAndLosses() {
-        print ("\(self.name) has  \(self.wins) and \(self.losses)")
     }
     
     public func teamRating() -> Int {
@@ -55,21 +47,6 @@ public class Team {
         }
         return totalTeamRating / roster.count
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     public func giveMeYourBestPlayer() -> Player {
         var soFarHighestPlayer:  Player = roster[0]
@@ -82,30 +59,6 @@ public class Team {
     }
     
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     public func sayTheNameOfYourBestPlayer() {
         var soFarHighestPlayer: Player = roster[0]
         for player in roster {
@@ -113,7 +66,6 @@ public class Team {
                 soFarHighestPlayer = player
             }
         }
-        print(soFarHighestPlayer.name)
     }
     
 }// end Team

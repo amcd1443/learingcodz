@@ -120,14 +120,16 @@ worstTeamInLeague.losses
 worstTeamInLeague.roster
 
 
-print("TEAM | W   L    R")
+print("TEAM |   W   L    R")
 print("--------------------")
-print(theBruins.name, theBruins.wins, theBruins.losses)
+print(theBruins.name, theBruins.wins, theBruins.losses, theBruins.teamRating())
 print(theRedWings.name)
 print(theAllStars.name)
 print(theBlueJackets.name)
 print("___________________")
-
+print(team.name, team.wins, team.losses, team.teamRating())
+print("___________________")
+print(theNHL.hockeyClubs)
 
 
 

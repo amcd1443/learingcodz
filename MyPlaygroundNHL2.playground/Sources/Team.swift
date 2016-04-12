@@ -27,8 +27,8 @@ public class Team {
         self.losses = 0
     }
     
-    public func draftPlayer(newPlayer:Player) {
-        roster.append(newPlayer)
+    public func draftPlayer(playerToAddToTheTeamsRoster:Player) {
+        roster.append(playerToAddToTheTeamsRoster)
     }
 
 

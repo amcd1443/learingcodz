@@ -127,9 +127,16 @@ print(theRedWings.name)
 print(theAllStars.name)
 print(theBlueJackets.name)
 print("___________________")
-print(team.name, team.wins, team.losses, team.teamRating())
+
+for oneOfTheTeams in theNHL.hockeyClubs {
+    print(oneOfTheTeams.name, oneOfTheTeams.wins, oneOfTheTeams.losses, oneOfTheTeams.teamRating())
+}
+
 print("___________________")
-print(theNHL.hockeyClubs)
+
+
+
+
 
 
 

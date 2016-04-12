@@ -65,6 +65,12 @@ public class HockeyLeague {
         }
         return teamWithMostLoses
     }
-    
+//    public func listOfTeams() -> Team {
+//        var teamsinlist: Team = hockeyClubs[0]
+//        
+//        }
+//    
 
 }
+
+//i want to show name of team(Team, wins, losses, Rating)

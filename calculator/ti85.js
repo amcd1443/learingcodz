@@ -1,18 +1,33 @@
-module.exports.add = function(x,y) {
+module.exports.add = function(x, y) {
 	return x + y;
 };
 
-module.exports.subtract = function(x,y) {
+module.exports.subtract = function(x, y) {
 	return x - y;
 };
 
-module.exports.divide = function(x,y) {
+module.exports.divide = function(x, y) {
 	return x / y; 
 };
 
-module.exports.multiply = function(x,y) {
+module.exports.multiply = function(x, y) {
 	return x * y;
 };
+
+
+module.exports.squareroot = function(x) {
+	return x * x / x;
+};
+
+module.exports.power = function(x,y) {
+	return Math.pow(x,y);
+};
+
+
+module.exports.square = function(x) {
+	return x * x;
+};
+
 
 
 //create squareRoot function

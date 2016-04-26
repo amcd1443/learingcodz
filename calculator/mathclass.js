@@ -20,3 +20,5 @@ console.log(powered)
 
 var squared = calculator.square(8);
 console.log(squared)
+
+

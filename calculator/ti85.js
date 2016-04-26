@@ -15,10 +15,6 @@ module.exports.multiply = function(x, y) {
 };
 
 
-module.exports.squareroot = function(x) {
-	return x * x / x;
-};
-
 module.exports.power = function(x,y) {
 	return Math.pow(x,y);
 };

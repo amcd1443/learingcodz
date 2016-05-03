@@ -12,3 +12,9 @@ console.log(bozoSupermanDeparture)
 
 
 console.log(bozoSupermanGreeting + " " + bozoSupermanDeparture + " is the way Bozo Superman greets people and says good bye") 
+
+bozoSupermanDeparture = "laters"
+console.log(bozoSupermanGreeting + " " + bozoSupermanDeparture + " is the way Bozo Superman greets people and says good bye") 
+
+
+

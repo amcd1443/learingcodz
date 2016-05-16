@@ -24,7 +24,7 @@ var recipies = [sauceRecipe, breadRecipe, tomatoCakes];
 var canIMakeBread = function(ingredients) {
 	var counter = 0;
 	var numberOfFoundIngredients = 0;
-	while (counter < breadRecipe.ingredients.length) {
+		while (counter < breadRecipe.ingredients.length) {
 
 		var ingredientToCheck = breadRecipe.ingredients[counter];
 		var rightHandCounter = 0;
@@ -48,8 +48,80 @@ var canIMakeBread = function(ingredients) {
 	}
 }
 
-var tellMeWhichRecipiesIcanMake = function(ingredients) {
+var canIMakeSauce = function(ingredients) {
+	var counter = 0
+	var sauceIngredientsFound = 0
+	while (counter < sauceRecipe.ingredients.length) {
+
+		var sauceIngredientsToCheck = sauceRecipe.ingredients[counter];
+		var sauceIngredientsCounter = 0;
+
+		while (sauceIngredientsCounter < ingredients.length) {
+
+			var rightHandIngredientToCheck = ingredients[sauceIngredientsCounter];
+			if (sauceIngredientsToCheck == rightHandIngredientToCheck) {
+				sauceIngredientsFound = sauceIngredientsFound + 1;
+			}
+
+			sauceIngredientsCounter = sauceIngredientsCounter + 1;
+		}
+
+		counter = counter + 1;
+	}
+
+if (sauceIngredientsFound == sauceRecipe.ingredients.length) {
+	return true
+} else {
+	return false
+}
 
 }
+
+
+var canIMakeTomatoCake = function(ingredients) {
+	var counter = 0;
+	var tomatoCakeIngredientsFound = 0;
+	while (counter < tomatoCakes.ingredients.length) {
+
+		var tomatoCakeIngredientsToCheck = tomatoCakes.ingredients[counter];
+		var tomatoCakesCounter = 0; 
+
+		while (tomatoCakesCounter < ingredients.length) {
+			var rightHandIngredientToCheck = ingredients[tomatoCakesCounter];
+			if (tomatoCakeIngredientsToCheck == rightHandIngredientToCheck) {
+				tomatoCakeIngredientsFound = tomatoCakeIngredientsFound + 1;
+			}
+
+			tomatoCakesCounter = tomatoCakesCounter + 1;
+		}
+
+		counter = counter + 1
+	}
+
+	if (tomatoCakeIngredientsFound == tomatoCakes.ingredients.length) {
+		return true
+	} else {
+		return false
+	}
+
+}
+
+
+
+
+var tellMeWhichRecipiesIcanMake = function(ingredients) {}
+
+
+
+
+
+
+
+
+
+
+
+module.exports.canIMakeTomatoCake = canIMakeTomatoCake;
+module.exports.canIMakeSauce = canIMakeSauce;
 module.exports.tellMeWhichRecipiesIcanMake = tellMeWhichRecipiesIcanMake;
 module.exports.canIMakeBread = canIMakeBread;

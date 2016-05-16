@@ -12,7 +12,7 @@ var breadRecipe = {
 
 
 var tomatoCakes = {
-	name: "pasta sauce",
+	name: "tomato cakes",
 	ingredients: ["tomato", "onion", "salt", "flour"],
 	steps: ["peel tomatos", "chop onion", "boil tomatos", "mash tomatos", "add flour"]
 }
@@ -69,14 +69,13 @@ var canIMakeSauce = function(ingredients) {
 		counter = counter + 1;
 	}
 
-if (sauceIngredientsFound == sauceRecipe.ingredients.length) {
-	return true
-} else {
-	return false
-}
+	if (sauceIngredientsFound == sauceRecipe.ingredients.length) {
+		return true
+	} else {
+		return false
+	}
 
-}
-
+};
 
 var canIMakeTomatoCake = function(ingredients) {
 	var counter = 0;
@@ -108,13 +107,21 @@ var canIMakeTomatoCake = function(ingredients) {
 
 
 
-
-var tellMeWhichRecipiesIcanMake = function(ingredients) {}
-
-
-
-
-
+var tellMeWhichRecipiesIcanMake = function(ingredients) {
+	// 1. loop through each individual recipe (4 lines of code)
+	var counter = 0;
+	while (counter < recipies.length) {
+		var recipe = recipies[counter];
+		console.log("hello, i can make" + " " + recipe.name);
+	// 2. compare each ingredient in each recipe to ingredients i have 
+	// 3. if there is a match of ingredients then we log that there was a match
+	// 4. after we log the match, we then move onto the next ingredient
+	// 5. if there is a match again, we log that match
+		counter = counter + 1;
+	}
+	// 6. after we looped through the comparisions, if there are 4 ingredients needed and we have 4 matches, we have success
+	// 7. we tell person that we can make that recipe
+}
 
 
 

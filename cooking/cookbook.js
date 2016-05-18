@@ -105,16 +105,30 @@ var canIMakeTomatoCake = function(ingredients) {
 
 }
 
-
-
 var tellMeWhichRecipiesIcanMake = function(ingredients) {
 	// 1. loop through each individual recipe (4 lines of code)
 	var counter = 0;
+	var matchedIngredients = 0;
 	while (counter < recipies.length) {
 		var recipe = recipies[counter];
-		console.log("hello, i can make" + " " + recipe.name);
+		console.log("hello, i can make" + " " + recipe.name + " and here are the ingredients " + recipe.ingredients);
 	// 2. compare each ingredient in each recipe to ingredients i have 
-	// 3. if there is a match of ingredients then we log that there was a match
+		var recipesIngredientsCounter = 0;
+		var ingredientsIHave = tomatoCakes;
+		while (recipesIngredientsCounter < recipe.ingredients.length) {
+			var baggedIngredientsToCheck = recipe[recipesIngredientsCounter];
+			if (ingredientsIHave == baggedIngredientsToCheck) {
+				matchedIngredients = matchedIngredients + 1
+			}
+			recipesIngredientsCounter = recipesIngredientsCounter + 1;
+			console.log("end of comparisions")
+ 		}
+ 	// 3. if there is a match of ingredients then we log that there was a match
+ 	if (matchedIngredients )
+
+
+	console.log("end")
+	console.log(recipe.name)
 	// 4. after we log the match, we then move onto the next ingredient
 	// 5. if there is a match again, we log that match
 		counter = counter + 1;
@@ -122,10 +136,6 @@ var tellMeWhichRecipiesIcanMake = function(ingredients) {
 	// 6. after we looped through the comparisions, if there are 4 ingredients needed and we have 4 matches, we have success
 	// 7. we tell person that we can make that recipe
 }
-
-
-
-
 
 
 module.exports.canIMakeTomatoCake = canIMakeTomatoCake;

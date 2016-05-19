@@ -105,36 +105,62 @@ var canIMakeTomatoCake = function(ingredients) {
 
 }
 
-var tellMeWhichRecipiesIcanMake = function(ingredients) {
-	// 1. loop through each individual recipe (4 lines of code)
-	var counter = 0;
+var tellMeWhichRecipiesIcanMake = function(ingredientsPersonHas) {
 	var matchedIngredients = 0;
-	while (counter < recipies.length) {
-		var recipe = recipies[counter];
-		console.log("hello, i can make" + " " + recipe.name + " and here are the ingredients " + recipe.ingredients);
-	// 2. compare each ingredient in each recipe to ingredients i have 
-		var recipesIngredientsCounter = 0;
-		var ingredientsIHave = tomatoCakes;
-		while (recipesIngredientsCounter < recipe.ingredients.length) {
-			var baggedIngredientsToCheck = recipe[recipesIngredientsCounter];
-			if (ingredientsIHave == baggedIngredientsToCheck) {
-				matchedIngredients = matchedIngredients + 1
-			}
-			recipesIngredientsCounter = recipesIngredientsCounter + 1;
-			console.log("end of comparisions")
- 		}
- 	// 3. if there is a match of ingredients then we log that there was a match
- 	if (matchedIngredients )
 
-
-	console.log("end")
-	console.log(recipe.name)
-	// 4. after we log the match, we then move onto the next ingredient
-	// 5. if there is a match again, we log that match
-		counter = counter + 1;
+	// 1. loop through each individual recipe (4 lines of code)
+	var i = 0;
+	while (i < 1) {
+		console.log("loop", i);
+		var currentRecipe = recipies[i]; //pulling item out of array
+		var currentRecipeIngredients = currentRecipe.ingredients; 
+		console.log(currentRecipeIngredients)
+		var individualCurrentIngredient = currentRecipeIngredients[i];
+		console.log(individualCurrentIngredient)
+ 	 // 3. if there is a match of ingredients then we log that there was a match
+	 // 4. after we log the match, we then move onto the next ingredient
+	 // 5. if there is a match again, we log that match
+		i = i + 1;
 	}
 	// 6. after we looped through the comparisions, if there are 4 ingredients needed and we have 4 matches, we have success
 	// 7. we tell person that we can make that recipe
+}
+
+var canIMakeBread2 = function(ingredients) {
+	
+	var breadRecipe = {
+		name: "plain bread",
+		ingredients: ["flour", "water", "salt"],
+		steps: ["add flour water salt", "kneed dough", "preheat over"]
+	}
+
+	var myClicker = 0;
+
+	for (var i = 0; i < breadRecipe.ingredients.length; i = i + 1) {
+		var breadIngredient = breadRecipe.ingredients[i];
+		console.log("------this is bread recipe  " + breadIngredient);
+		for (var j = 0; j < ingredients.length; j = j + 1) {
+			var  myIngredient = ingredients[j];
+			console.log("this is my own " + myIngredient);
+			if (myIngredient == breadIngredient) {
+				console.log(myIngredient + " DOES equal !!!!! " + breadIngredient);
+				myClicker++;
+				console.log("clicker is now " + myClicker) 
+				
+				break;
+			} else {
+				console.log(myIngredient + " does NOT match " + breadIngredient);
+			}
+
+		}
+	}
+			if (myClicker == breadRecipe.ingredients.length) {
+					console.log(" I CAN MAKE BREAD") 
+				} else {
+					console.log("you suck")
+				}
+
+
 }
 
 
@@ -142,3 +168,4 @@ module.exports.canIMakeTomatoCake = canIMakeTomatoCake;
 module.exports.canIMakeSauce = canIMakeSauce;
 module.exports.tellMeWhichRecipiesIcanMake = tellMeWhichRecipiesIcanMake;
 module.exports.canIMakeBread = canIMakeBread;
+module.exports.canIMakeBread2 = canIMakeBread2;	

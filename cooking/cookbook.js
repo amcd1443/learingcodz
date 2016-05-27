@@ -146,7 +146,6 @@ var canIMakeBread2 = function(ingredients) {
 				console.log(myIngredient + " DOES equal !!!!! " + breadIngredient);
 				myClicker++;
 				console.log("clicker is now " + myClicker) 
-				
 				break;
 			} else {
 				console.log(myIngredient + " does NOT match " + breadIngredient);
@@ -159,11 +158,80 @@ var canIMakeBread2 = function(ingredients) {
 				} else {
 					console.log("you suck")
 				}
+				console.log("END BREAD RECIPE");
+};
 
+var canIMakeSauce2 = function(ingredients) {
 
+	var sauceRecipe = {
+		name: "pasta sauce",
+		ingredients: ["tomatos", "onion", "garlic"],
+		steps: ["peel tomatos", "chop onion", "peel garlic", "boil tomatos"]
+	}
+	
+	var mySauceClicker = 0;
+
+	for (var i = 0; i < sauceRecipe.ingredients.length;  i = i + 1) {
+		var sauceIngredient2 = sauceRecipe.ingredients[i];
+		console.log("sauce recipe being made " + sauceIngredient2);
+			for (var j = 0; j < ingredients.length; j = j + 1) { 
+				var mySauceIngredient = ingredients[j];
+				console.log("these are my sauce ingredients " + mySauceIngredient);
+					if (mySauceIngredient == sauceIngredient2) {
+						console.log(mySauceIngredient + " SAUCE EQUALS SAUCE " + sauceIngredient2);
+						mySauceClicker++;
+						console.log("ADDING numbers to the sauce clicker " + mySauceClicker);
+					}	else {
+						console.log("ingredients are not a match")
+					}
+
+			}
+	}
+
+	if (mySauceClicker == sauceRecipe.ingredients.length) {
+		console.log("SAUCE HAS BEEN MADE")
+	} else {
+		console.log("NOT able to make sauce");
+	}
+};
+
+var canIMakeTomatoCake2 = function(ingredients) {
+
+var tomatoCakes = {
+	name: "tomato cakes",
+	ingredients: ["tomato", "onion", "salt", "flour"],
+	steps: ["peel tomatos", "chop onion", "boil tomatos", "mash tomatos", "add flour"]
 }
 
+var myTomatoClicker = 0;
 
+
+	for (var i = 0; i < tomatoCakes.ingredients.length; i = i + 1) {
+		var tomatoCakesIngredient2 = tomatoCakes.ingredients[i];
+		 console.log(" TOMATO CAKES RECIPE YIPEE " + tomatoCakesIngredient2);
+		 	for (var j = 0; j < ingredients.length; j = j + 1) {
+		 		var myTomatoCakesIngredients = ingredients[j];
+		 		 console.log("the ingredients i have " + myTomatoCakesIngredients);
+		 		 	if (myTomatoCakesIngredients == tomatoCakesIngredient2) {
+		 		 		console.log("we have a MATCH!!!");
+		 		 		myTomatoClicker++;
+		 		 		console.log("my tomato clicker just grew")
+		 		 	} else {
+		 		 		console.log("NO match");
+		 		 	}
+		 	}
+}
+
+	if (myTomatoClicker == tomatoCakes.ingredients.length) {
+		console.log("tomato cakes success");
+		} else {
+			console.log("NO tomato cakes can be made");
+			}
+
+};
+
+module.exports.canIMakeTomatoCake2 = canIMakeTomatoCake2;
+module.exports.canIMakeSauce2 = canIMakeSauce2;
 module.exports.canIMakeTomatoCake = canIMakeTomatoCake;
 module.exports.canIMakeSauce = canIMakeSauce;
 module.exports.tellMeWhichRecipiesIcanMake = tellMeWhichRecipiesIcanMake;

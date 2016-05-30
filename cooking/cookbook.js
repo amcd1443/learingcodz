@@ -231,12 +231,14 @@ var canIMakeTomatoCake2 = function(ingredients) {
 };
 
 
-// var whatCanIMake = function(ingredients) {
-//  var recipesICanMakeCounter = 0;
+var whatCanIMake = function(ingredients) {
+ var recipesICanMakeCounter = 0;
 
-//  for (var i = 0; i < recipies.length i = i + 1) {
+ for (var i = 0; i < recipies.length i = i + 1) {
+ 	console.log("can i make?", recipies[i].name, "?");
+ }
 
-//  }
+}
 
 
 
@@ -257,3 +259,4 @@ module.exports.canIMakeSauce = canIMakeSauce;
 module.exports.tellMeWhichRecipiesIcanMake = tellMeWhichRecipiesIcanMake;
 module.exports.canIMakeBread = canIMakeBread;
 module.exports.canIMakeBread2 = canIMakeBread2;	
+module.exports.whatCanIMake = whatCanIMake;	

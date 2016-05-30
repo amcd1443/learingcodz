@@ -43,3 +43,4 @@ var austinCanMakeTomatoCake = cookbook.canIMakeTomatoCake(austinsIngredients);
 cookbook.canIMakeBread2(austinsIngredients);
 cookbook.canIMakeSauce2(austinsIngredients);
 cookbook.canIMakeTomatoCake2(austinsIngredients);
+cookbook.whatCanIMake(austinsIngredients);

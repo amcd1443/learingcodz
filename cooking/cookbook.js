@@ -197,13 +197,13 @@ var canIMakeSauce2 = function(ingredients) {
 
 var canIMakeTomatoCake2 = function(ingredients) {
 
-var tomatoCakes = {
+	var tomatoCakes = {
 	name: "tomato cakes",
 	ingredients: ["tomato", "onion", "salt", "flour"],
 	steps: ["peel tomatos", "chop onion", "boil tomatos", "mash tomatos", "add flour"]
-}
+	}
 
-var myTomatoClicker = 0;
+	var myTomatoClicker = 0;
 
 
 	for (var i = 0; i < tomatoCakes.ingredients.length; i = i + 1) {
@@ -220,7 +220,7 @@ var myTomatoClicker = 0;
 		 		 		console.log("NO match");
 		 		 	}
 		 	}
-}
+	}
 
 	if (myTomatoClicker == tomatoCakes.ingredients.length) {
 		console.log("tomato cakes success");
@@ -229,6 +229,26 @@ var myTomatoClicker = 0;
 			}
 
 };
+
+
+// var whatCanIMake = function(ingredients) {
+//  var recipesICanMakeCounter = 0;
+
+//  for (var i = 0; i < recipies.length i = i + 1) {
+
+//  }
+
+
+
+
+
+
+
+
+
+// }
+
+
 
 module.exports.canIMakeTomatoCake2 = canIMakeTomatoCake2;
 module.exports.canIMakeSauce2 = canIMakeSauce2;

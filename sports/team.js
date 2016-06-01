@@ -18,19 +18,25 @@ var draftPlayer = function(player) {
 			console.log("this number is taken, please choose a new one")
 			var newNumberTaken = false;
 			//then pick a new random number
+			var newNumber = Math.floor((Math.random() * 100) + 1);
 			//use while loop to make sure that number is not already taken
-			//use for loop to recheck the new number agains all the players numbers
-			//if newNUmber === players[j].number 
+			while (newNumber != players[i].number) {
+				if (newNumber !=  player.number) {
+					console.log("that is a new number")
+					} else {
+					console.log("RE-PICK")
+					}
+			}
+			
+			
+			}
+			//use for loop to recheck the new number against all the players numbers
+			//if newNumber === players[j].number 
 			//if the newNumber is still taken, while loop will run again
-		}	
-
-	}
+		
+	} 
 	players.push(player);
 }
-
-
-
-
 
 
 

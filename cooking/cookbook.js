@@ -26,26 +26,26 @@ var canIMakeBread = function(ingredients) {
 	var numberOfFoundIngredients = 0;
 		while (counter < breadRecipe.ingredients.length) {
 
-		var ingredientToCheck = breadRecipe.ingredients[counter];
-		var rightHandCounter = 0;
+			var ingredientToCheck = breadRecipe.ingredients[counter];
+			var rightHandCounter = 0;
 
-		while (rightHandCounter < ingredients.length) {
+			while (rightHandCounter < ingredients.length) {
 
-			var rightHandIngredientToCheck = ingredients[rightHandCounter];
-			if (ingredientToCheck == rightHandIngredientToCheck) {
-				numberOfFoundIngredients = numberOfFoundIngredients + 1;
-			} 
-			rightHandCounter = rightHandCounter + 1;
-		}//end while righthand
+				var rightHandIngredientToCheck = ingredients[rightHandCounter];
+				if (ingredientToCheck == rightHandIngredientToCheck) {
+					numberOfFoundIngredients = numberOfFoundIngredients + 1;
+					} 
+				rightHandCounter = rightHandCounter + 1;
+				}//end while righthand
 
-		counter = counter + 1;
-	}//end while left hand
+				counter = counter + 1;
+		}//end while left hand
 
 	if (numberOfFoundIngredients == breadRecipe.ingredients.length) {
 		return true
-	} else {
-		return false
-	}
+			} else {
+				return false
+				}
 }
 
 var canIMakeSauce = function(ingredients) {

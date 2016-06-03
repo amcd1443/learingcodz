@@ -1,9 +1,3 @@
-
-
-
-
-
-
 var availableFirstNames = ["John", "Jeff", "Jack", "Joe", "Josh", "Jacob", "Joey"];
 var availableLastNames = ["Smith", "Doe", "Jackson", "Johnson", "White", "Black"];
 var availableNumbers = [34, 76, 66, 99, 78, 00]

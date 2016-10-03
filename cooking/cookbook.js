@@ -117,13 +117,9 @@ var tellMeWhichRecipiesIcanMake = function(ingredientsPersonHas) {
 		console.log(currentRecipeIngredients)
 		var individualCurrentIngredient = currentRecipeIngredients[i];
 		console.log(individualCurrentIngredient)
- 	 // 3. if there is a match of ingredients then we log that there was a match
-	 // 4. after we log the match, we then move onto the next ingredient
-	 // 5. if there is a match again, we log that match
 		i = i + 1;
 	}
-	// 6. after we looped through the comparisions, if there are 4 ingredients needed and we have 4 matches, we have success
-	// 7. we tell person that we can make that recipe
+
 }
 
 var canIMakeBread2 = function(ingredients) {
@@ -239,17 +235,6 @@ var whatCanIMake = function(ingredients) {
  }
 
 }
-
-
-
-
-
-
-
-
-
-// }
-
 
 
 module.exports.canIMakeTomatoCake2 = canIMakeTomatoCake2;

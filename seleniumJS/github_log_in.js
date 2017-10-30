@@ -10,6 +10,6 @@ driver.wait(until.titleIs('How people build software · GitHub'), 3000).catch (f
 	console.log("NOT github landing page");
 });
 
-dri
+
 
 driver.quit();

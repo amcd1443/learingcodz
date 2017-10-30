@@ -1,6 +1,10 @@
 var availableFirstNames = ["John", "Jeff", "Jack", "Joe", "Josh", "Jacob", "Joey"];
 var availableLastNames = ["Smith", "Doe", "Jackson", "Johnson", "White", "Black"];
+<<<<<<< HEAD
 var availableNumbers = [34, 76, 66, 99, 78, 00, 01]
+=======
+var availableNumbers = [34, 76, 66, 99, 78, 00]
+>>>>>>> nhl
 
 
 var generateRandomPlayer = function(){
@@ -16,6 +20,15 @@ var generateRandomPlayer = function(){
 	randomPlayer.playerRating = Math.floor((Math.random() * 100) + 1);
 
 	return randomPlayer;
+<<<<<<< HEAD
 };
 
 module.exports.generateRandomPlayer = generateRandomPlayer;
+=======
+
+};
+
+module.exports.generateRandomPlayer = generateRandomPlayer;
+
+
+>>>>>>> nhl

@@ -1,24 +1,75 @@
-var temperature = function(degrees) {
-    if (degrees > 50) {
+// for (var i = 2; i < 13; i++) {
+//     console.log(i);
+// };
 
-        console.log("its HOTT in here!?")
-        } else { 
-            console.log("i can see my BREATH?!")
-        }
-}
+// for (var i = 1; i <= 10; i++) {
+//     console.log(i);
+// };
 
-temperature(Math.floor((Math.random() * 100) + 1));   
-console.log((Math.floor((Math.random() * 100) + 1)))
+// Write your very own for loop!
+
+// var breadIngredients = ["flour", "water", "yeast", "salt", "pepper", "honey", "oregano"]
+
+// var myIngredients = ["flour", "yeast", "salt"];
+
+// for (i = 0; i < breadIngredients.length; i++) {
+//     if (myIngredients.length == breadIngredients.length) {
+//         console.log("we have a match in the number of ingredients");
+//     } else {
+//         console.log("i do not have enough ingredients");
+//     }
+// };
 
 
-var helloGoodBye = function(waving) {
+//Remember to set your condition outside the loop!
+
+// var loop = function(random){
+//     while(random <= 3) {
+//         if (i = 0; i = (Math.floor((Math.random() * 10) + 1)); i++ ;)
+//         console.log("hello my name is")
+//         //random = 9;
+//     }
+// };
+
+// loop(i);
+
+
+//Remember to make your condition true outside the loop!
+   
+// var colors = ["green", "yellow", "red", "blue", "black", "orange", "violet"]
     
-    if (waving >= 5) {
-        console.log("hello");
-    } else {
-        console.log("goodbye");
-        }
 
-};
+//     for (var i = 0; i <= colors.length; i++)
+//     console.log(colors);
+    
 
-helloGoodBye(Math.floor((Math.random() * 10) + 1));
+// var car = true;
+
+// var loop = function() {
+//    while (car === true) {
+//        console.log("this is fun")
+//        car === false
+//     }
+    
+// }
+    
+// var colors = ["green", "yellow", "red", "blue", "black", "orange", "violet"];
+    
+
+//     for (var i = 0; i <= colors.length; i++)
+//     console.log(colors);
+    
+//     
+
+
+
+for (var i = 0; i <= 3; i++) {
+    console.log("this is fun");
+    }
+    
+var help = false;
+
+do {
+    console.log("this is so lame and boring, where is the actual application that we need to do this???");
+}
+    while(help)

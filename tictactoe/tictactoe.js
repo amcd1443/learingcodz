@@ -88,7 +88,7 @@ var scoreTracker = function()	{
 };
 
 var resetGameArea = function(){
-	document.getElementById('gameArea').innerHTML = "";
+	document.getElementById('box0').innerHTML = "";
 	console.log("reset gameArea clicked");
 }
 

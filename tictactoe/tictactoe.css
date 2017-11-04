@@ -1,12 +1,22 @@
 #textbox {
 	
 	border: 6px solid red;
-
+	width: 100%;
 }
 
 #playersTurn {
 	color: red;
 	text-align: center;
+}
+
+#scoreBoard {
+	color: blue;
+	border: 2px solid black;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 #gameArea {
@@ -22,6 +32,12 @@
 	width: 33%;
 	float: left;
 	text-align: center;
-	
 }
 
+#oScore {
+	color: pink;
+}
+
+#xScore{
+	color: teal;
+}

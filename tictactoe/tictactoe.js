@@ -72,25 +72,43 @@ var checkIfWinner = function() {
 };
 
 var scoreTracker = function()	{
-	var x = 0;
-	var o = 0;
+	
+	
 	if (playersTurn.innerHTML == "better way for O to win") {	//adds 1 to O's score when player O gets 3 in a row
 	console.log("plus 1 to player O's score");
-	o++;
+	var o = 0;
+	o++
 	oScore.innerHTML = o;
 	}
 	if (playersTurn.innerHTML == "better way for X to win") {	//adds 1 to X's score when player X gets 3 in a row
 	console.log("plus 1 to player X");
-	x++;
+	var x = 0;
+	x = x+1;
 	xScore.innerHTML =  x;
 	}
 
 };
-
-var resetGameArea = function(){
-	document.getElementById('box0').innerHTML = "";
-	console.log("reset gameArea clicked");
-}
+//also reset the player's turn text too, after you solve the scoring issue
+var resetGameArea = function()	{
+	document.getElementById('box0').innerHTML = "0";
+	document.getElementById('box0').style.backgroundColor = "white";
+	document.getElementById('box1').innerHTML = "1";
+	document.getElementById('box1').style.backgroundColor = "white";
+	document.getElementById('box2').innerHTML = "2";
+	document.getElementById('box2').style.backgroundColor = "white";
+	document.getElementById('box3').innerHTML = "3";
+	document.getElementById('box3').style.backgroundColor = "white";
+	document.getElementById('box4').innerHTML = "4";
+	document.getElementById('box4').style.backgroundColor = "white";
+	document.getElementById('box5').innerHTML = "5";
+	document.getElementById('box5').style.backgroundColor = "white";
+	document.getElementById('box6').innerHTML = "6";
+	document.getElementById('box6').style.backgroundColor = "white";
+	document.getElementById('box7').innerHTML = "7";
+	document.getElementById('box7').style.backgroundColor = "white";
+	document.getElementById('box8').innerHTML = "8";
+	document.getElementById('box8').style.backgroundColor = "white";
+};
 
 
 for (var i = 0; i < 9; i++) { 

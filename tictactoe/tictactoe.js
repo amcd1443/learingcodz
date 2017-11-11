@@ -71,20 +71,21 @@ var checkIfWinner = function() {
 	}
 };
 
+
+var xTotalPoints = 0;
+var oTotalPoints = 0;
 var scoreTracker = function()	{
-	
-	
-	if (playersTurn.innerHTML == "better way for O to win") {	//adds 1 to O's score when player O gets 3 in a row
-	console.log("plus 1 to player O's score");
-	var o = 0;
-	o++
-	oScore.innerHTML = o;
+	if (playersTurn.innerHTML == "better way for O to win") { 	
+		console.log("plus 1 to player O");
+		var o = document.getElementById('oScore');
+		oTotalPoints++
+		o.innerHTML = oTotalPoints;
 	}
 	if (playersTurn.innerHTML == "better way for X to win") {	//adds 1 to X's score when player X gets 3 in a row
-	console.log("plus 1 to player X");
-	var x = 0;
-	x = x+1;
-	xScore.innerHTML =  x;
+		console.log("plus 1 to player X");
+		var x = document.getElementById('xScore');
+		xTotalPoints++
+		x.innerHTML =  xTotalPoints;
 	}
 
 };
@@ -110,6 +111,10 @@ var resetGameArea = function()	{
 	document.getElementById('box8').style.backgroundColor = "white";
 };
 
+var resetScoreBoard = function() {
+	document.getElementById('oScore').innerHTML = 0;
+	document.getElementById('xScore').innerHTML = 0;
+};
 
 for (var i = 0; i < 9; i++) { 
 	var box = document.getElementById("box" + i);	//var box is box+(what ever i is = to starts 0 ends 8)
@@ -118,9 +123,10 @@ for (var i = 0; i < 9; i++) {
 };
 
 //Homework
-//decide winner - done
-//eliminate double clicking that changes the sign
-//keep score? need reset button to finish
-//reset the game with a button -- resets gameArea, and another to reset the scoreBoard
+//decide winner - done = lines 25 to 72
+//eliminate double clicking that changes the sign - Next
+//keep score? - done = lines 75 to 91
+//reset the game with a button -- resetGameArea - done = 93 to 112
+// another to reset the scoreBoard - done = 114 to 117
 
 

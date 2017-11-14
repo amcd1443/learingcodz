@@ -5,7 +5,18 @@ var oScore = document.getElementById('oScore');
 
 var isXTurn = true;
 
+var xTotalPoints = 0;
+var oTotalPoints = 0;
+
+var currentWinner = null;
+
+
 var clickHandler = function() { //start of function that handles how clicking will work
+
+	if ( (this.innerHTML == "X") || (this.innerHTML == "O") || (currentWinner != null) ) {	//if innerHTML = X or O or currentWinner does NOT equal null, return out of the function
+		console.log("blocking click");
+		return;	//return means exit out of the function ASAP.
+	}
 	this.style.backgroundColor = 'blue'; //this specific variable (to clickHandler) 
 										 //style.backgroundColor, changes background to blue
 	this.innerHTML = "X"; //this specific variable (to clickHandler) changes the innerHTML text to X
@@ -39,31 +50,40 @@ var checkIfWinner = function() {
 	//X horizontal wins
 	if ( (box0.innerHTML == box1.innerHTML) && (box0.innerHTML == box2.innerHTML) ) { 	//this says that what ever innerHTML is set to will check the,
 		displayString = stringBase + box0.innerHTML + stringTail;			//other two boxes if they match, equals win
+		currentWinner = box0.innerHTML;
 	}
 	if ( (box3.innerHTML == box4.innerHTML) && (box3.innerHTML == box5.innerHTML) )	{
 		displayString = stringBase + box3.innerHTML + stringTail;
+		currentWinner = box3.innerHTML;	//this sets currentWinner as X or O until the reset button changes it  
+										//to null or one of the if statements is activated and changes it X or O
 	}
 	if ( (box6.innerHTML == box7.innerHTML) && (box6.innerHTML == box8.innerHTML) ) {
 		displayString = stringBase + box6.innerHTML + stringTail;
+		currentWinner = box6.innerHTML;
 	}
 
 	//X Diagonal Wins
 	if ( (box0.innerHTML == box4.innerHTML) && (box0.innerHTML == box8.innerHTML) ) {
 		displayString = stringBase + box0.innerHTML + stringTail;
+		currentWinner = box0.innerHTML;
 	}
 	if ( (box2.innerHTML == box4.innerHTML) && (box2.innerHTML == box6.innerHTML) ) {
 		playersTurn.innerHTML = stringBase + box2.innerHTML + stringTail;
+		currentWinner = box2.innerHTML;
 	}
 
 	//X Vertical win: comparing box0 to box3, and box6
 	if ( (box0.innerHTML == box3.innerHTML) && (box0.innerHTML == box6.innerHTML) )	{
 		playersTurn.innerHTML = stringBase + box0.innerHTML + stringTail;
+		currentWinner = box0.innerHTML;
 	}
 	if ( (box1.innerHTML == box4.innerHTML) && (box1.innerHTML == box7.innerHTML) ) {
 		playersTurn.innerHTML = stringBase + box1.innerHTML + stringTail;
+		currentWinner = box1.innerHTML;	
 	}
 	if ( (box2.innerHTML == box5.innerHTML) && (box2.innerHTML == box8.innerHTML) ) {
 		playersTurn.innerHTML = stringBase+ box2.innerHTML + stringTail;
+		currentWinner = box2.innerHTML;
 	}
 
 	if (displayString != null) {
@@ -72,61 +92,51 @@ var checkIfWinner = function() {
 };
 
 
-var xTotalPoints = 0;
-var oTotalPoints = 0;
-var scoreTracker = function()	{
-	if (playersTurn.innerHTML == "better way for O to win") { 	
-		console.log("plus 1 to player O");
-		var o = document.getElementById('oScore');
+
+
+var scoreTracker = function()	{ //function that keeps score between O and X
+	if (currentWinner == "O") { 	//this states that if playersTurn text is "netter way for O to win" run the if statement
 		oTotalPoints++
-		o.innerHTML = oTotalPoints;
-	}
-	if (playersTurn.innerHTML == "better way for X to win") {	//adds 1 to X's score when player X gets 3 in a row
-		console.log("plus 1 to player X");
-		var x = document.getElementById('xScore');
+		oScore.innerHTML = oTotalPoints;
+	} else if (currentWinner == "X") {	//adds 1 to X's score when player X gets 3 in a row
 		xTotalPoints++
-		x.innerHTML =  xTotalPoints;
+		xScore.innerHTML =  xTotalPoints;
+	} else if (currentWinner == null ) {
+		console.log("the game is not over");
+	} else {
+		console.log("This should never happen, how could currentWinner be not null but also not X or O?", currentWinner);
 	}
 
 };
 //also reset the player's turn text too, after you solve the scoring issue
 var resetGameArea = function()	{
-	document.getElementById('box0').innerHTML = "0";
-	document.getElementById('box0').style.backgroundColor = "white";
-	document.getElementById('box1').innerHTML = "1";
-	document.getElementById('box1').style.backgroundColor = "white";
-	document.getElementById('box2').innerHTML = "2";
-	document.getElementById('box2').style.backgroundColor = "white";
-	document.getElementById('box3').innerHTML = "3";
-	document.getElementById('box3').style.backgroundColor = "white";
-	document.getElementById('box4').innerHTML = "4";
-	document.getElementById('box4').style.backgroundColor = "white";
-	document.getElementById('box5').innerHTML = "5";
-	document.getElementById('box5').style.backgroundColor = "white";
-	document.getElementById('box6').innerHTML = "6";
-	document.getElementById('box6').style.backgroundColor = "white";
-	document.getElementById('box7').innerHTML = "7";
-	document.getElementById('box7').style.backgroundColor = "white";
-	document.getElementById('box8').innerHTML = "8";
-	document.getElementById('box8').style.backgroundColor = "white";
+	for (var i = 0; i < 9; i++) {
+		var box = document.getElementById("box" + i);
+		box.innerHTML = i;
+		box.style.backgroundColor = "white";
+		
+	};
+	currentWinner = null;
 };
 
 var resetScoreBoard = function() {
 	document.getElementById('oScore').innerHTML = 0;
 	document.getElementById('xScore').innerHTML = 0;
+	resetGameArea();
 };
 
 for (var i = 0; i < 9; i++) { 
 	var box = document.getElementById("box" + i);	//var box is box+(what ever i is = to starts 0 ends 8)
 	box.style.cursor = 'pointer';	//changes the style of the mouse cursor to a pointer
 	box.onclick = clickHandler;	//when you click a box it runs the clickHandler function above
+
 };
 
 //Homework
-//decide winner - done = lines 25 to 72
-//eliminate double clicking that changes the sign - Next
-//keep score? - done = lines 75 to 91
-//reset the game with a button -- resetGameArea - done = 93 to 112
-// another to reset the scoreBoard - done = 114 to 117
+
+// fix playersTurn text area for game over - 
+// to randomly choose X or O that goes first use math.Random
+// if its a tie game say so and ¿auto-reset?
+
 
 

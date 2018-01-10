@@ -204,7 +204,7 @@ for (var i = 0; i < 9; i++) {		//for loop that numbers out the boxes for the cli
 //Homework
 // fix playersTurn text area for game over - done.
 // to randomly choose X or O that goes first use math.Random - done
-// if its a tie game say so and ¿auto-reset? - how
+// if its a tie game say so and ¿auto-reset? - done
 // 
 
 

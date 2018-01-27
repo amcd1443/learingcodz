@@ -1,0 +1,7 @@
+.clickBox	{
+	border: 1px dashed red;
+	height: 12%;
+	width: 12%;
+	float: left;
+	text-align: center;
+}

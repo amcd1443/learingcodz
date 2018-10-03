@@ -1,42 +1,82 @@
-function takeANumber(katzDeliLine, name) {
-	var position = katzDeliLine.length + 1;
-	katzDeliLine.push(name);
+var cart = [];
 
-	console.log("welcome "+name+". You are number "+position+" in line.");
+function setCart(newCart) {
+	cart = newCart;
+
 };
-takeANumber([1,2,3,4],"jack");
+//////////////
 
-///////////////////////////////////////
+function getCart() {
+	return cart;
 
-function nowServing(deliLine) {
-	var name = "";
+};
+///////////////
 
-	if (deliLine.length === 0) {
-		console.log("there is nobody waiting in line");
-	} else {
-		console.log("there are "+deliLine.length+" in line");
+function viewCart() {
+	if (cart.length === 0) {
+		console.log("Your shopping cart is empty.");
+
 	}
+var statementArray = [];
+var i = 0;
+var l = cart.length;
 
-	name = deliLine.shift();
+while (i < l) {
+	var item = Object.keys(cart[i])[0];
+	var price = cart[i][item];
+	statementArray.push(item+" at $"+price);
+	i++
+}
+console.log(`In your cart, you have ${statementArray.join(',')}.`);
 
-	console.log("Currently serving "+name);
+};
+//////////////////
+
+function addToCart(itemName) {
+	var itemPrice = Math.round(Math.random()*100);
+	cart.push({[itemName]:itemPrice});
+	console.log( `${itemName} has been added to the cart. ${itemName} cost $${itemPrice}`)
+
+	return getCart()
+};
+////////////////////////
+
+function total() {
+	var t = 0;
+
+	return t;
+};
+//////////////////////////
+
+function removeFromCart(itemName) {
+	var inCart = false;
+
+	for (var n = 0, l = cart.length; n < l; n++) {
+		if (cart[n].hasOwnProperty(itemName)) {
+			var inCart = true;
+			cart.shift(itemName);
+		}
+	}
+if (!inCart) {
+	console.log(`That ${itemName} is not in your cart.`);
+}
+
+return cart;
+
+};
+////////////////////////
+
+function placeOrder(creditCard) {
+	if (creditCard === undefined) {
+		console.log("We don't have a credit card on file for you to place your order.");
+	}
+	if (creditCard != undefined) {
+		console.log( `Your total cost is $${total()}, which will be charged to the card ${creditCard}.` );
+	}
+	car = [];
 };
 
-nowServing([1,2,3,4,5,6,7,8]);
 
-//////////////////////////////////////////
+////////////////////
 
-function currentLine(katzDeliLine) {
-	if (katzDeliLine === 0) {
-		console.log("currentLine is empty");
-	}
-
-	var myString = `The line is currently: 1. ${katzDeliLine[0]}`;
-
-	for (let i=1; i<katzDeliLine.length; i++) {
-		myString += `, ${i+1}. ${katzDeliLine[i]}`;
-	}
-	console.log(myString);
-};
-
-currentLine(["jack","mike","dave","john"]);
+addToCart('carrot');
